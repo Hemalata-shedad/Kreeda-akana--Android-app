@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "bookings": {
+      "$slot_key": {
+        // Allow read by anyone
+        ".read": true,
+        // Allow write only if the slot doesn't already exist (prevents double-booking)
+        ".write": "!data.exists()"
+      }
+    },
+    "challenges": {
+      ".read": true,
+      ".write": true
+    },
+    "scores": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
